@@ -1,19 +1,83 @@
-# ![Band Aid Symantec](docs/band_aid_Symantec.png) PatchAutomation and ZeroDayPatch ![Band Aid Protirus](docs/band_aid_Protirus.png)
-
-![](https://img.shields.io/badge/language-c%23-green.svg)
-![](https://img.shields.io/badge/tag-smp-yellow.svg)
-![](https://img.shields.io/badge/tag-symantec-yellow.svg)
-![](https://img.shields.io/badge/tag-patch-yellow.svg)
-
-Patch Automation and ZeroDayPatch tool kit for ![SMP](docs/smp.png) Symantec Management Platform
+# Switches
 
 ---
 
-> Important Forewords: This tool will allow you to stage and distribute all bulletins that match the critical severity (or more if you use the /severity switch). I and Symantec in general do not advise to do this on test, validation or production systems _unless_ the MetaData Import Task is configured to import bulletins that you want to distribute or test.
+Replace # in `ZeroDayPatch-#.exe` to the current exe version number i.e. `ZeroDayPatch-8.5.exe`
 
 ---
 
-Command Line Help
+Command **version**
+
+`ZeroDayPatch-#.exe /version`
+
+Output 
+
+`{CWoC} ZeroDayPatch version 12`
+
+---
+
+Command **dryrun**
+
+`ZeroDayPatch-#.exe /dryrun`
+
+Output
+
+```
+Runtime Configuration data:
+        Debug = False
+        Dry run = True
+        Help needed = False
+        Patch all vendors = False
+        Released after = 07/11/2008 10:08:05
+        Released before = 07/11/2018 10:08:05
+        Severity = critical
+        Test run = False
+        Vendor name = *
+        Custom stored procedure =
+        Vulnerable = False
+
+ZeroDayPatch 12 starting.
+Making sure legacy stored procedure spBulletinsWithVulnerableClients is not present.
+Making sure legacy stored procedure ZeroDayPatch_GetVulnerableMachines-0001 is not present.
+Making sure legacy stored procedure ZeroDayPatch_GetVulnerableMachines-0002 is not present.
+Making sure legacy stored procedure ZeroDayPatch_GetVulnerableMachines-0003 is not present.
+# Using "exec spPMCoreReport_AllSoftwareBulletins" to get bulletin candidates.
+# 5074 bulletins returned by the stored procedure execution.
+# 0 bulletin names found in the exclusion table.
+1034 bulletins match the critical severity and will be checked for policies.
+
+######## THIS IS A DRY RUN ########
+
+Processing bulletin MS18-10-O365-DEFERRED (87efd180-d73d-4bd2-91a6-93ca8437e5a1) now.
+        ... bulletin will be stagged now.
+        Bulletin is now stagged.
+        Checking if we need to create a new policy now.
+        ... create a policy for the bulletin now.
+        Software update policy created!
+
+...
+
+0 software update policy creation tasks were started.
+ZeroDayPatch execution completed now. See you soon...
+```
+
+---
+
+Command **test**
+
+`ZeroDayPatch-#.exe /test`
+
+Output
+
+```
+As above
+
+But only 10 Policies are created.
+```
+
+---
+
+**Command Line Help**
 
 ```
 ZeroDayPatch (version #) command line usage:
@@ -115,35 +179,3 @@ ZeroDayPatch (version #) command line usage:
     /?
         Print this help message to the console (stdout).
 ```
-
----
-
-Original [PatchAutomation](https://github.com/somewhatsomewhere/patchautomation) from [Ludovic Ferre
-](https://www.symantec.com/connect/user/ludovic-ferre)
-
->[END OF "SUPPORT" NOTICE]
-
->Hello everyone, after close to 5 years maintaining various tools around Symantec Connect this legacy is turning to be more of a burden than anything else.
->It's still is a great set of tool and they all have their use, but as such I'm not going to maintain them anymore.
->The source code for this tool may still change over time, and can be found on Github: https://github.com/somewhatsomewhere?tab=repositories
-
->[/END OF "SUPPORT" NOTICE]
-
----
-
-Check the [WIKI](https://github.com/Protirus/patchautomation/wiki) or the following Symantec Connect Articles
-
-- [{CWoC} PatchAutomation Toolkit - Documentation and Guides](https://www.symantec.com/connect/articles/cwoc-patchautomation-toolkit-documentation-and-guides)
-
-- [{CWoC} PatchAutomation and ZeroDayPatch builds for 8.1](https://www.symantec.com/connect/downloads/cwoc-patchautomation-and-zerodaypatch-builds-81)
-
-- [{CWoC} PatchAutomation and ZeroDayPatch builds for 7.6](https://www.symantec.com/connect/downloads/cwoc-patchautomation-and-zerodaypatch-builds-76)
-
-- [{CWoC} PatchAutomation and ZeroDayPatch builds for 7.5 SP1](https://www.symantec.com/connect/downloads/cwoc-patchautomation-and-zerodaypatch-builds-75-sp1)
-
-- [{CWoC} ZeroDayPatch: Patch Automation Tool for PMS 7.1 SP2](https://www.symantec.com/connect/downloads/cwoc-zerodaypatch-patch-automation-tool-pms-71-sp2)
-
-There are also some **Docs**
-
-- [Build](/docs/Build.md)
-- [New Version](/docs/NewVersion.md)
