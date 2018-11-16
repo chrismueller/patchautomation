@@ -13,6 +13,16 @@ Patch Automation and ZeroDayPatch tool kit for ![SMP](docs/smp.png) Symantec Man
 
 ---
 
+There are also some **Docs**
+
+- [Build](/docs/BUILD.md)
+- [Build Errors](/docs/BUILDERRORS.md)
+- [New Version](/docs/NEWVERSION.md)
+- [Logs](/docs/LOGS.md)
+- [Switches](/docs/SWITCHES.md)
+
+---
+
 Command Line Help
 
 ```
@@ -133,6 +143,8 @@ Original [PatchAutomation](https://github.com/somewhatsomewhere/patchautomation)
 
 Check the [WIKI](https://github.com/Protirus/patchautomation/wiki) or the following Symantec Connect Articles
 
+- [{CWoC} PatchAutomation and ZeroDayPatch builds for 8.5](https://www.symantec.com/connect/articles/cwoc-patchautomation-and-zerodaypatch-builds-85)
+
 - [{CWoC} PatchAutomation Toolkit - Documentation and Guides](https://www.symantec.com/connect/articles/cwoc-patchautomation-toolkit-documentation-and-guides)
 
 - [{CWoC} PatchAutomation and ZeroDayPatch builds for 8.1](https://www.symantec.com/connect/downloads/cwoc-patchautomation-and-zerodaypatch-builds-81)
@@ -142,8 +154,3 @@ Check the [WIKI](https://github.com/Protirus/patchautomation/wiki) or the follow
 - [{CWoC} PatchAutomation and ZeroDayPatch builds for 7.5 SP1](https://www.symantec.com/connect/downloads/cwoc-patchautomation-and-zerodaypatch-builds-75-sp1)
 
 - [{CWoC} ZeroDayPatch: Patch Automation Tool for PMS 7.1 SP2](https://www.symantec.com/connect/downloads/cwoc-zerodaypatch-patch-automation-tool-pms-71-sp2)
-
-There are also some **Docs**
-
-- [Build](/docs/Build.md)
-- [New Version](/docs/NewVersion.md)
