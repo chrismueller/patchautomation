@@ -61,10 +61,12 @@ namespace Symantec.CWoC.APIWrappers {
 		}
 		
 		public static GuidCollection GetNonstagedUpdates(IList<Guid> gcUpdates){
-			return new GuidCollection(PMDal.PerformWithDlr<GuidCollection>(delegate {
-				return Altiris.NS.DataAccessLayer.DataAccessLayer<PatchManagementCoreResourcesDAL>.Instance.spPMCore_SoftwareUpdateListIsNotDownloaded(new GuidCollection(gcUpdates));
-			}));
-	}
+			GuidCollection gc = new GuidCollection();
+			foreach (Guid g in Altiris.NS.DataAccessLayer.DataAccessLayer<PatchManagementCoreResourcesDAL>.Instance.spPMCore_SoftwareUpdateListIsNotDownloaded(new GuidCollection(gcUpdates))) {
+				gc.Add(g);
+			}
+			return gc;
+		}
 
 		public string ResolveToUpdates(string bulletinGuids) {
 			string str;
