@@ -55,9 +55,9 @@ set fullref=/reference:%gac%\%softm%.dll /reference:%gac%\%invrm%.dll /reference
 
 set id=8.5
 
-cmd /c %csc% %fullref% /out:ZeroDayPatch-%id%.exe ZeroDayPatch.cs Constant.cs APIWrapper.cs CLIConfig.cs CLIInit.cs | %no_obs% | %no_pol% | %no_prv%
-cmd /c %csc% %fullref% /out:PatchAutomation-%id%.exe PatchAutomation.cs Constant.cs APIWrapper.cs CLIConfig.cs CLIInit.cs | %no_obs% | %no_pol% | %no_prv%
-cmd /c %csc% %fullref% /out:PatchExclusion-%id%.exe patchexclusion.cs APIWrapper.cs Constant.cs | %no_obs% | %no_pol% | %no_prv%
+cmd /c %csc% %fullref% /out:ZeroDayPatch-%id%.exe /win32icon:band_aid_Protirus.ico ZeroDayPatch.cs Constant.cs APIWrapper.cs CLIConfig.cs CLIInit.cs AssemblyInfo.cs | %no_obs% | %no_pol% | %no_prv%
+cmd /c %csc% %fullref% /out:PatchAutomation-%id%.exe /win32icon:band_aid_Protirus.ico PatchAutomation.cs Constant.cs APIWrapper.cs CLIConfig.cs CLIInit.cs AssemblyInfo.cs | %no_obs% | %no_pol% | %no_prv%
+cmd /c %csc% %fullref% /out:PatchExclusion-%id%.exe /win32icon:band_aid_Protirus.ico patchexclusion.cs APIWrapper.cs Constant.cs AssemblyInfo.cs | %no_obs% | %no_pol% | %no_prv%
 
 goto end
 
