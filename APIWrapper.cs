@@ -190,7 +190,7 @@ namespace Symantec.CWoC.APIWrappers {
 			}
             SoftwareUpdateAdvertismentSet newAdvertismentSet = item.GetNewAdvertismentSet();
             newAdvertismentSet.Initialise(gc);
-           SoftwareUpdateDistributionTask task = Item.GetItem(Tasks.Singletons70.SoftwareUpdateDistrbutionTask, ItemLoadFlags.WriteableIgnoreAll) as SoftwareUpdateDistributionTask;
+            SoftwareUpdateDistributionTask task = Item.GetItem(Tasks.Singletons70.SoftwareUpdateDistrbutionTask, ItemLoadFlags.WriteableIgnoreAll) as SoftwareUpdateDistributionTask;
             if (task == null) {
                 return "Cannot initialise of SoftwareUpdateDistrbutionTask. Item is missing from the database";
             }
@@ -227,8 +227,12 @@ namespace Symantec.CWoC.APIWrappers {
             if (item == null) {
                 return string.Format("Unable to load vendor policy {0}", platformPolicy);
             }
+            GuidCollection gc = new GuidCollection();
+			foreach (Guid g in suGuids) {
+				gc.Add(g);
+			}
             SoftwareUpdateAdvertismentSet newAdvertismentSet = item.GetNewAdvertismentSet();
-            newAdvertismentSet.Initialise((GuidCollection)suGuids);
+            newAdvertismentSet.Initialise(gc);
             SoftwareUpdateDistributionTask task = Item.GetItem(Tasks.Singletons70.SoftwareUpdateDistrbutionTask, ItemLoadFlags.WriteableIgnoreAll) as SoftwareUpdateDistributionTask;
             if (task == null) {
                 return "Cannot initialise of SoftwareUpdateDistrbutionTask. Item is missing from the database";
