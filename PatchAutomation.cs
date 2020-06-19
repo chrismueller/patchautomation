@@ -68,7 +68,7 @@ namespace Symantec.CWoC {
                     LoggingAPI.ReportInfo("PatchAutomate execution completed. See you soon...");
                 }
             } else {
-                LoggingAPI.ReportInfo("Access denied - only administrator are allowesd to use this tool. This entry will be recorded in the Altiris Server logs.");
+                LoggingAPI.ReportInfo("Access denied - Only Administrators are allowed to use this tool. This entry will be recorded in the Altiris Server logs.");
                 rc = -1;
             }
             return rc;

@@ -61,7 +61,7 @@ namespace Symantec.CWoC {
                         return 0;
                     return -1;
                 }
- #endregion
+                #endregion
             } else {
                 Console.WriteLine("Access denied - Only Altiris administrators are allowed to use this tool");
             }

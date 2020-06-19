@@ -41,7 +41,7 @@ namespace Symantec.CWoC {
 							return -1;
 					}
 				} else {
-					Console.WriteLine("Access denied - only administrator are allowesd to use this tool.");
+					Console.WriteLine("Access denied - Only Administrators are allowed to use this tool.");
 					return -1;
 				}
 			}
