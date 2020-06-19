@@ -8,7 +8,7 @@ For example `journal_20181115143405.log`
 
 They will output
 
-`15/11/2018 14:59:03: Stagged bulletin MS18-10-O365-DEFERRED (guid=87efd180-d73d-4bd2-91a6-93ca8437e5a1).`
+`15/11/2018 14:59:03: Staged bulletin MS18-10-O365-DEFERRED (guid=87efd180-d73d-4bd2-91a6-93ca8437e5a1).`
 
 You can also check the **Altiris Log Viewer**
 

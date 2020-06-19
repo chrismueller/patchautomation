@@ -49,8 +49,8 @@ Making sure legacy stored procedure ZeroDayPatch_GetVulnerableMachines-0003 is n
 ######## THIS IS A DRY RUN ########
 
 Processing bulletin MS18-10-O365-DEFERRED (87efd180-d73d-4bd2-91a6-93ca8437e5a1) now.
-        ... bulletin will be stagged now.
-        Bulletin is now stagged.
+        ... bulletin will be staged now.
+        Bulletin is now staged.
         Checking if we need to create a new policy now.
         ... create a policy for the bulletin now.
         Software update policy created!
