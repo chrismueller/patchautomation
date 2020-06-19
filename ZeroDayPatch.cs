@@ -102,11 +102,11 @@ namespace Symantec.CWoC {
                             // Skip this bulletin as it is not yet downloaded
                             continue;
                         }
-                        Console.WriteLine("\t... bulletin will be stagged now.");
+                        Console.WriteLine("\t... bulletin will be staged now.");
                         if (!config.Dry_Run) {
                             try {
                                 wrap.EnsureStaged(bulletin.ToString(), true);
-                                LogOp(String.Format("{0}: Stagged bulletin {1} (guid={2}).", DateTime.Now.ToString(), name, bulletin.ToString()));
+                                LogOp(String.Format("{0}: Staged bulletin {1} (guid={2}).", DateTime.Now.ToString(), name, bulletin.ToString()));
                             } catch {
                                 // Do not retry staging error. Any download error is retried at the task level. Other errors won't be solved by retry...
                                 if (config.ExcludeOnFail) {
@@ -118,7 +118,7 @@ namespace Symantec.CWoC {
                                 continue; // Go to the next bulletin
                             }
                         }
-                        Console.WriteLine("\tBulletin is now stagged.");
+                        Console.WriteLine("\tBulletin is now staged.");
                     }
                     Console.WriteLine("\tChecking if we need to create a new policy now.");
 

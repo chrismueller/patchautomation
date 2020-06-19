@@ -51,11 +51,11 @@ namespace Symantec.CWoC {
 			if (wrap.IsStaged(bulletin_guid)) {
 				Console.WriteLine("\tThis bulletin is already staged!");
 			} else {
-				Console.WriteLine("\tbulletin will be stagged now...");
+				Console.WriteLine("\tbulletin will be staged now...");
 					try {
 						rc = -20;
 						wrap.EnsureStaged(bulletin_name, true);
-						Console.WriteLine("\t... Bulletin is now stagged!");
+						Console.WriteLine("\t... Bulletin is now staged!");
 					} catch {
 						Console.WriteLine("\nFailed to stage bulletin {0} - skipping the bulletin now.", bulletin_name);
 					}

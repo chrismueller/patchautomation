@@ -94,7 +94,7 @@ namespace Symantec.CWoC {
                     if (wrap.IsStaged(bulletin.ToString())) {
                         Console.WriteLine("PHASE 1: This bulletin is already staged.");
                     } else {
-                        Console.WriteLine("PHASE 1: This bulletin will be stagged now.");
+                        Console.WriteLine("PHASE 1: This bulletin will be staged now.");
                         if (!config.Dry_Run) {
                             try {
                                 EventLog.ReportInfo(String.Format("Bulletin {0} will be staged now.", bulletin_name));
