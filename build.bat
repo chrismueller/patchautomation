@@ -29,6 +29,40 @@ if "%1"=="8.0" goto build-8.0
 if "%1"=="8.1" goto build-8.1
 if "%1"=="8.5" goto build-8.5
 if "%1"=="8.5.3" goto build-8.5-RU3
+if "%1"=="8.7" goto build-8.7
+
+:build-8.7
+
+set ver1=v4.0_8.7.1273.0__d516cb311cfb6e4f
+set atrscm=%acm%\%ver1%\%acm%
+set atrsns=%ans%\%ver1%\%ans%
+set atrsrx=%ars%\%ver1%\%ars%
+set atrssi=%asi%\%ver1%\%asi%
+set atrsrh=%arh%\%ver1%\%arh%
+
+set ver2=v4.0_8.7.1148.0__99b1e4cc0d03f223
+set atrstm=%ats%\%ver2%\%ats%
+set atrstc=%atc%\%ver2%\%atc%
+set atrsdn=%adn%\%ver2%\%adn%
+
+set ver3=v4.0_8.7.1103.0__d516cb311cfb6e4f
+set atrspm=%apm%\%ver3%\%apm%
+
+set ver4=v4.0_8.7.1141.0__d516cb311cfb6e4f
+set invrm=%airm%\%ver4%\%airm%
+
+set ver5=v4.0_8.7.1048.0__d516cb311cfb6e4f
+set softm=%asm%\%ver5%\%asm%
+
+set fullref=/reference:%gac%\%softm%.dll /reference:%gac%\%invrm%.dll /reference:%gac%\%atrscm%.dll /reference:%gac%\%atrsns%.dll /reference:%gac%\%atrsrx%.dll /reference:%gac%\%adb%\%ver1%\%adb%.dll /reference:%gac%\%atrssi%.dll /reference:%gac%\%atrstm%.dll /reference:%gac%\%atrspm%.dll /reference:%gac%\%atrstc%.dll /reference:%gac%\%atrsdn%.dll /reference:%gac%\%atrsrh%.dll
+
+set id=8.7
+
+cmd /c %csc% %fullref% /out:ZeroDayPatch-%id%.exe /win32icon:band_aid_Protirus.ico ZeroDayPatch.cs Constant.cs APIWrapper.cs CLIConfig.cs CLIInit.cs AssemblyInfo.cs | %no_obs% | %no_pol% | %no_prv%
+cmd /c %csc% %fullref% /out:PatchAutomation-%id%.exe /win32icon:band_aid_Protirus.ico PatchAutomation.cs Constant.cs APIWrapper.cs CLIConfig.cs CLIInit.cs AssemblyInfo.cs | %no_obs% | %no_pol% | %no_prv%
+cmd /c %csc% %fullref% /out:PatchExclusion-%id%.exe /win32icon:band_aid_Protirus.ico patchexclusion.cs APIWrapper.cs Constant.cs AssemblyInfo.cs | %no_obs% | %no_pol% | %no_prv%
+
+goto end
 
 :build-8.5-RU3
 
